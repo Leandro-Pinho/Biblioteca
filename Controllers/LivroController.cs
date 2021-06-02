@@ -37,9 +37,7 @@ namespace Biblioteca.Controllers
                 objFiltro = new FiltrosLivros();
                 objFiltro.Filtro = filtro;
                 objFiltro.TipoFiltro = tipoFiltro;
-            } else {
-                ViewBag.Erro = "Ocorreu o erro XPTO";
-            }
+            } 
             LivroService livroService = new LivroService();
             return View(livroService.ListarTodos(objFiltro));
         }
