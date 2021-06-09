@@ -41,7 +41,7 @@ namespace Biblioteca.Models
                 bc.SaveChanges();
             }
         }
-        public void ExcluirUsuario(int id)
+        public void excluirUsuario(int id)
         {
             using(BibliotecaContext bc = new BibliotecaContext())
             {

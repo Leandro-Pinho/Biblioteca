@@ -15,28 +15,11 @@
                 <option value="Titulo">Título</option>
             </select>
         </div>
-        <div class="form-group mb-2 mx-sm-3">
+        <div class=" mb-2 mx-sm-3 input-group">
             <input type="text" placeholder="Filtro" name="Filtro" class="form-control" />
         </div>
-
         <div>
-            <select name="itensPorPagina" id="itensPorPagina"> <!-- paginação -->
-                <option value="10">10 livros</option>
-                <option value="15">15 livros</option>
-                <option value="30">30 livros</option>
-                <option value="50">50 livros</option>
-                <option value="@Model.Count">Todos</option>
-            </select>
-        </div>
-
-        <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
-
-        <div id="SeletorPaginas">
-            <span>Página:</span>
-            @for(int i = 1; i <= NumTotalDePag; i++)
-            {
-                <span><a href="/Livros/Listagem?PaginaAtual=@i"> @i, </a></span>
-            }
+        <button type="submit" class="input-group btn btn-primary mb-2">Pesquisar</button>
         </div>
     </form>
     </div>
@@ -70,5 +53,29 @@
         } else {
             <p>Nenhum registro encontrado!</p>
         }
+        <form class="form-inline justify-content-end" method="POST">
+
+        <div class="input-group col">
+            <select name="itensPorPagina" id="itensPorPagina"> <!-- paginação -->
+                <option value="10">10 livros</option>
+                <option value="15">15 livros</option>
+                <option value="30">30 livros</option>
+                <option value="50">50 livros</option>
+                <option value="@Model.Count">Todos</option>
+            </select>
+            <div>
+            <button type="submit" class="btn btn-light">Pesquisar</button></div>
+        </div>
+
+        <div class="pagination" id="SeletorPaginas">
+            <span class="page-item"><a class="page-link" href="#">Previous</a></span>
+            
+            @for(int i = 1; i <= NumTotalDePag; i++)
+            {
+                <span class="page-item"><a class="page-link" href="/Livros/Listagem?PaginaAtual=@i"> @i </a></span>
+            } 
+            
+        </div>
+      </form>
     </div>
 </div>

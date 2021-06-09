@@ -8,7 +8,7 @@ namespace Biblioteca.Controllers
     {
         public IActionResult Cadastro()
         {
-            
+            Autenticacao.CheckLogin(this);
             return View();
         }
 
@@ -39,7 +39,7 @@ namespace Biblioteca.Controllers
 
         public IActionResult Listagem(string tipoFiltro, string filtro, string itensPorPagina, int NumDaPagina, int PaginaAtual)
         {
-            
+            Autenticacao.CheckLogin(this);
             FiltrosLivros objFiltro = null;
             if(!string.IsNullOrEmpty(filtro))
             {
@@ -56,7 +56,7 @@ namespace Biblioteca.Controllers
 
         public IActionResult Edicao(int id)
         {
-            
+            Autenticacao.CheckLogin(this);
             LivroService ls = new LivroService();
             Livro l = ls.ObterPorId(id);
             return View(l);

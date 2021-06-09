@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -27,21 +28,23 @@
                             </div>
                         </li>
 
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown input-group">
                             <a class="nav-link text-light dropdown-toggle" data-toggle="dropdown" href="#" id="menuEmprestimo">Emprestimo</a>
                             <div class="dropdown-menu" aria-labelledby="menuLivros">
                                 <a class="dropdown-item" href="/Emprestimo/Listagem">Listagem</a>
                                 <a class="dropdown-item" href="/Emprestimo/Cadastro">Cadastro</a>
                             </div>
                         </li>
+                    
+                                <li class="">
+                                    <a class="nav-link text-light" href="/Usuarios/ListaDeUsuarios" id="menuUsuarios">Usuarios</a>
+                                </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="/Usuarios/ListaDeUsuarios" id="menuUsuarios">Usuarios</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-light left" href="/Usuarios/Sair" id="menuUsuarios">Logout</a>
-                        </li>
+                                <li class="" >
+                                    <a class="btn btn-outline-light my-2 my-sm-0" href="/Usuarios/Sair" id="menuUsuarios">Logout</a>
+                                </li>
+                            
+                                           
                     </ul>
                 </div>
             </div>

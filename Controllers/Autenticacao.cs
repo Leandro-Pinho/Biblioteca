@@ -11,7 +11,7 @@ namespace Biblioteca.Controllers
     {
         public static void CheckLogin(Controller controller) // checar o login
         {   
-            if(string.IsNullOrEmpty(controller.HttpContext.Session.GetString("user")))
+            if(string.IsNullOrEmpty(controller.HttpContext.Session.GetString("login")))
             {
                 controller.Request.HttpContext.Response.Redirect("/Home/Login");
             }
@@ -47,7 +47,7 @@ namespace Biblioteca.Controllers
             if(userEncontrado.ToList().Count==0)
             {
                 Usuario admin = new Usuario();
-                admin.login = "admin";
+                admin.login = "admin";  
                 admin.senha = Criptografo.TextoCriptografado("123");
                 admin.tipo = Usuario.ADMIN;
                 admin.Nome = "Administrador";
